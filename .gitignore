@@ -1,3 +1,5 @@
 *.py[cod]
 .idea
-
+Flask_Blogging.egg-info/
+build/
+dist/
