@@ -1,36 +1,15 @@
 {% extends "master.html" %}
 
-{% from "macros/main.jinja" import home_row %}
+{% from "macros/main.jinja" import home_row, header_row %}
 
 {% block style %}
-<link rel='stylesheet' type="text/css" href="{{ url_for('static', filename='_lib/bootstrap-3.3.4/css/bootstrap.css')}}">
+<!--<link rel='stylesheet' type="text/css" href="{{ url_for('static', filename='_lib/bootstrap-3.3.4/css/bootstrap.css')}}">-->
+<link rel='stylesheet' type="text/css" href="{{ url_for('static', filename='_lib/bootstrap-3.3.4/css/my-bootstrap.css')}}">
 {% endblock style %}
 {% block extrastyle %}{% endblock extrastyle %}
 {% block title %}{% endblock title %}
 
-{% block header %}
-    <header>
-        {{ home_row() |safe }}
-    </header>
-{% endblock %}
-
 {% block body %}
-
-    <!-- navbar header -->
-    <div class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-                <a href="/blog" class="navbar-brand">
-                    {{ config.BLOGGING_SITENAME or 'Flask-Blogging'}}
-                </a>
-                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-        </div>
-    </div>
 
     <!-- main content -->
      <div class="container">
@@ -60,9 +39,6 @@
      </div>
     {% include "blogging/analytics.html" %}
     {% block js %}
-    <!--<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
     <script src="{{ url_for('static', filename='_lib/jquery-2.1.4.min.js')}}"></script>
     <script src="{{ url_for('static', filename='_lib/MathJax/MathJax.js')}}"></script>
     <script src="{{ url_for('static', filename='_lib/bootstrap-3.3.4/js/bootstrap.min.js')}}"></script>
